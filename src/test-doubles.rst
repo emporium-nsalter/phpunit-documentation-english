@@ -41,8 +41,8 @@ then you can use the ``getMockBuilder($type)`` method to
 customize the test double generation using a fluent interface.
 
 By default, all methods of the original class are replaced with a dummy
-implementation that just returns ``null`` (without calling
-the original method). Using the ``will($this->returnValue())``
+implementation that returns ``null`` (without calling
+the original method), or the defined return type-hint (e.g. ``: string`` will return an empty string). If this return type is a class PHPUnit will return a new mock of that specific class. Using the ``will($this->returnValue())``
 method, for instance, you can configure these dummy implementations to
 return a value when called.
 
